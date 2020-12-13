@@ -1,0 +1,7 @@
+SELECT a.id, a.name, COUNT (*) managing_accounts
+FROM accounts a
+JOIN orders o
+ON a.id = o.account_id
+GROUP BY a.id, a.name
+HAVING COUNT (*) >20
+ORDER BY COUNT (*) DESC
