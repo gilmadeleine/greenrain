@@ -1,4 +1,5 @@
-# beautifulrain
+# SQL Practice from Data Prgoramming with Python_Udacity 
+
 Query 1
 
 SELECT f.title AS film_title, c.name AS category_name,          COUNT(rental_date)Rental_count
