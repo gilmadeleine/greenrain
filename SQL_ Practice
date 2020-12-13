@@ -1,0 +1,11 @@
+SQL Practice from Data Programming with Python_Udacity
+
+SELECT date, full_name, payment_total/payment_count AS per_count, payment_count, payment_total
+FROM
+    (SELECT DATE_TRUNC('month', p.payment_date)AS date, CONCAT(c.first_name,' ',  c.last_name)AS full_name, COUNT(p.payment_date)AS payment_count,SUM(p.amount)AS payment_total
+   FROM payment p
+     JOIN customer c
+        ON c.customer_id= p.customer_id
+  GROUP BY 1,2) t1
+ORDER BY 3 DESC
+LIMIT 10;
