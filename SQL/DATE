@@ -1,0 +1,7 @@
+SELECT DATE_TRUNC('month', o.occurred_at), SUM(gloss_amt_usd), a.name 
+FROM orders o
+JOIN accounts a
+On o.account_id = a.id
+WHERE a.name = 'Walmart'
+GROUP BY 1
+ORDER BY 2 DESC
