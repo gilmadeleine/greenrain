@@ -1,0 +1,5 @@
+SELECT orders.occurred_at, accounts.name, account_name orders.total, order_total orders.total_amt_usd order_total_amt_usd
+FROM accounts
+JOIN orders
+ON accounts.id=orders.account_id
+WHERE orders.occurred_at BETWEEN '2015-01-01' AND '2015-12-31'
