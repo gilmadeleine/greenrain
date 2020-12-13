@@ -1,4 +1,4 @@
-# SQL Practice from Data Prgoramming with Python_Udacity 
+# SQL Practice Question 
 
 
 Query 2
