@@ -1,0 +1,10 @@
+SELECT r.name AS region_name, w.channel AS channel, COUNT(w.channel) AS channel_count
+FROM accounts a
+JOIN web_events w
+ON a.id=w.account_id
+JOIN sales_reps s
+On s.id=a.sales_rep_id
+JOIN region r
+On r.id=s.region_id
+GROUP BY r.name, w.channel
+ORDER BY region_name, channel_count DESC 
