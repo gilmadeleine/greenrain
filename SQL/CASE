@@ -1,0 +1,9 @@
+SELECT s.name, COUNT (*), 
+SUM(o.total_amt_usd), CASE WHEN SUM(o.total_amt_usd) > 750000 OR COUNT (*) >200 THEN 'top' WHEN SUM(o.total_amt_usd) >500000 OR COUNT (*)> 150 THEN 'middle' ELSE 'low' END AS level
+FROM orders o
+JOIN accounts a
+ON a.id = o.account_id
+JOIN sales_reps s
+ON a.sales_rep_id = s.id
+GROUP BY 1
+ORDER BY 3 DESC
