@@ -1,0 +1,2 @@
+SELECT primary_poc, LEFT(primary_poc, POSITION(' ' in primary_poc))first_name, RIGHT(primary_poc, STRPOS(primary_poc,' '))last_name
+FROM accounts
