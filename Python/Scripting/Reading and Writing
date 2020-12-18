@@ -1,0 +1,12 @@
+with open('/Users/madi/Desktop/camelot.txt') as lyrics:
+    print(lyrics.read())
+    
+    #output
+    We're the knights of the round table
+We dance whenever we're able
+
+with open('/Users/madeleine/Desktop/camelot.txt') as lyrics:
+    print(lyrics.read(2))
+    
+    #output
+    We
