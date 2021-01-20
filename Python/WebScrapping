@@ -1,0 +1,15 @@
+#How to Scrape Yahoo News: following simple Python scripts
+#Python code
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+html =urlopen("https://news.yahoo.com/")
+bsObject = BeautifulSoup(html, "html.parser")
+for link in bsObject. find_all('a'):
+    print(link.text.strip(),link.get('href'))
+    
+#Output
+Home https://www.yahoo.com/
+Mail https://mail.yahoo.com/?.intl=us&.lang=en-US
+News https://news.yahoo.com/
+--------------------------
