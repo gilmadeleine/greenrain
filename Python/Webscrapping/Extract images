@@ -1,0 +1,16 @@
+#How to extract all images from a website using Beautiful Soup 
+
+#Input: Python code
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+html =urlopen("https://news.yahoo.com/")
+bsObject = BeautifulSoup(html, "html.parser")
+for link in bsObject. find_all('img'):
+    print(link.text.strip(),link.get('src'))
+    
+#Output
+
+ https://s.yimg.com/uu/api/res/1.2/G9_FV7MTNTl9OnkWpPDYHg--~B/Zmk9ZmlsbDtoPTE0NDtweW9mZj0wO3c9MjcyO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/os/creatr-uploaded-images/2021-01/8ee0f610-5b6e-11eb-bf37-6ed11ac5b92b
+ https://s.yimg.com/uu/api/res/1.2/R8yCjAVcrEQqd7MWNDblaQ--~B/Zmk9c3RyaW07aD00MDQ7cT05NTt3PTcyMDthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2021-01/798cb700-5b6d-11eb-bbf7-8dbba67b4df6.cf.jpg
+ https://s.yimg.com/uu/api/res/1.2/kNKLMzapnUqgEVN.JTzPgA--~B/Zmk9c3RyaW07aD0xNjA7cT04MDt3PTM0MDthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2021-01/16430400-5b64-11eb-9dff-0493a28b3277.cf.jpg
