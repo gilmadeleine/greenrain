@@ -1,0 +1,115 @@
+# How to scrap event comments from the website: code by Today Code(오늘 코드)
+# First check if the website allows the scrapping by adding after the website address /robots.txt
+#Input
+
+import pandas as pd
+import numpy as np
+import re
+import matplotlib.pyplot as plt
+import requests
+from bs4 import BeautifulSoup as bs
+import pandas as pd
+from tqdm import trange
+base_url = "https://www.inflearn.com/pages/newyear-event-20200102"
+response = requests.get(base_url)
+response
+#output
+#<response [200]>
+response.text
+#output
+# \n\t<!DOCTYPE html>\n\t<html lang="ko-KR">\n\t\n<head>\n  <meta charset="utf-8" />\n  \n  <!--<meta\n    name="viewport"\n    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"\n  />-->\n  <meta name="viewport" content="height=device-height, \n                      width=device-width, initial-scale=1.0, \n
+
+soup = bs(response.text, 'html.parser')
+content = soup.select("#main > section > div > div > div.chitchats > div.chitchat-list >div")
+content[-1]
+#output
+#<div class="chitchat-item chitchat-editor-closed comment-editor-closed" data-id="23158">
+<figure class="image is-48x48">
+<img alt="HONGJOO Ha" class="user_thumb is-rounded" src="https://cdn.inflearn.com/public/main/profile/default_profile.png"/>
+</figure>
+<div class="content">
+<div class="author">
+<a class="author_name" href="/users/229263">HONGJOO Ha</a>
+<time class="created_at" datetime="Thu Jan 30 2020 20:37:05 GMT+0900 (GMT+09:00)">⋅ 12개월 전</time>
+#Input
+chitchat = content[-1]. select("div.body.edit-chitchat")[0].get_text(strip=True)
+chitchat
+#Out
+'오늘코드 사랑해요 ~ \n데이터 분석 기초를 둔둔하게~ \n#관심강의 : Oracle SQL, 데이터 분석, 파이썬'
+#Input
+for i in range(5):
+    print("-"*20)
+    chitchat = content[i]. select("div.body.edit-chitchat")[0].get_text(strip=True)
+    print(chitchat)
+#Output
+--------------------
+2020년  목표: 프알못에서 프로젝트 마스터 되기 
+관심 있는 강의 : 스프링 , React
+--------------------
+2020년 목표: 스프링 열심히 공부하서 직장에서 사랑받고 싶어요!!
+관심 있는 강의 : 스프링 웹 MVC
+--------------------
+2020년 목표: C++ 열심히 공부해서, 학교에서 꼭 A 맞기..!! 
+관심있는 강의: 따배씨 C++
+--------------------
+2020년 목표 : 리액트 공부하기
+--------------------
+40대 프로그래밍 시작! : 우리를 위한 프로그래밍 : 파이썬 중급
+#Input
+len(content)
+#Out
+100
+#Input
+#list를 만들어주기 위해 events 라는 변수를 만들어 주어서 chitchat 을 담는다
+events = []
+for i in range(5):
+    print("-"*20)
+    chitchat = content[i]. select("div.body.edit-chitchat")[0].get_text(strip=True)
+    print(chitchat)
+    events.append(chitchat)
+#Input
+events
+
+#Output
+['2020년  목표: 프알못에서 프로젝트 마스터 되기 \n관심 있는 강의 : 스프링 , React',
+ '2020년 목표: 스프링 열심히 공부하서 직장에서 사랑받고 싶어요!!\n관심 있는 강의 : 스프링 웹 MVC',
+ '2020년 목표: C++ 열심히 공부해서, 학교에서 꼭 A 맞기..!! \n관심있는 강의: 따배씨 C++',
+ '2020년 목표 : 리액트 공부하기',
+ '40대 프로그래밍 시작! : 우리를 위한 프로그래밍 : 파이썬 중급']
+ 
+ # Create dataframe Using Pandas
+ #input
+pd.DataFrame({"comments":events})
+ 
+ #Output
+ comments
+0	2020년 목표: 프알못에서 프로젝트 마스터 되기 \n관심 있는 강의 : 스프링 ...
+1	2020년 목표: 스프링 열심히 공부하서 직장에서 사랑받고 싶어요!!\n관심 있는 ...
+2	2020년 목표: C++ 열심히 공부해서, 학교에서 꼭 A 맞기..!! \n관심있는...
+3	2020년 목표 : 리액트 공부하기
+4	40대 프로그래밍 시작! : 우리를 위한 프로그래밍 : 파이썬 중급
+...	...
+95	사이버수사대(디지털포렌식)를 지원하고 싶은 현직 경찰관입니다. 현재는 아는 것도, ...
+96	퇴사한지 2년 (헉 벌써…) 되가는 백수 개발자입니다. 현재 리액트, 노드, 파이어...
+97	취업 성공~~!!!\n#관심강의: 스프링, 자바, Swift
+98	올해는 파이썬, 데이터 분석, 머신러닝을 배워\n업무에 조금이라도 활용하고 싶습니다...
+99	오늘코드 사랑해요 ~ \n데이터 분석 기초를 둔둔하게~ \n#관심강의 : Oracl...
+100 rows × 1 columns
+
+# Saving as CSV: helps to analyze the data
+
+#input: default is index=True
+df.to_csv("event_comments.csv", index=False)
+
+# Check to see if the saving was okay: add head() or tail() to sample a few in advance
+#Input
+pd.read_csv("event_comments.csv").tail()
+
+#Output
+comments
+95	사이버수사대(디지털포렌식)를 지원하고 싶은 현직 경찰관입니다. 현재는 아는 것도, ...
+96	퇴사한지 2년 (헉 벌써…) 되가는 백수 개발자입니다. 현재 리액트, 노드, 파이어...
+97	취업 성공~~!!!\n#관심강의: 스프링, 자바, Swift
+98	올해는 파이썬, 데이터 분석, 머신러닝을 배워\n업무에 조금이라도 활용하고 싶습니다...
+99	오늘코드 사랑해요 ~ \n데이터 분석 기초를 둔둔하게~ \n#관심강의 : Oracl..
+
