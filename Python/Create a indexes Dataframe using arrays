@@ -1,0 +1,16 @@
+# Create a indexes Dataframe using arrays
+# DataFrame using arrays.  
+#Input
+
+import pandas as pd  
+lstt = {'Name':['Grace','Paul','Jane'],'Pet':['Sori','Madu','Soga']}
+df= pd.DataFrame(lstt, index=["1st","2nd","3rd"])
+print(df)
+
+#Output
+
+      Name   Pet
+1st  Grace  Sori
+2nd   Paul  Madu
+3rd   Jane  Soga
+
