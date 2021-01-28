@@ -1,0 +1,6 @@
+# Select all records from Client Table  where the first letter of the City starts with anything from an "a" to an "g".
+# Note: SQL is NOT case sensitive and use semicolon in the end of statement and use single quote for non-numeric value
+
+SELECT *
+FROM Client
+WHERE City LIKE '[a-f]%';
