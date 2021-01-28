@@ -1,0 +1,6 @@
+# Select all records where the first letter of the City is NOT an "a" or a "b" or an "c".
+SELECT * FROM Customers
+WHERE City LIKE '[^abc']%';
+
+
+
