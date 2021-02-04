@@ -1,0 +1,9 @@
+# Select the Customer Name from the Customers table and find the longest and shortest
+#Input
+SELECT CustomerName, Length(CustomerName) 
+FROM Customers
+ORDER BY Length(CustomerName) DESC
+LIMIT 1;
+
+
+
