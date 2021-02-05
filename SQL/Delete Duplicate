@@ -1,0 +1,9 @@
+#Q: Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+#https://www.hackerrank.com/challenges/weather-observation-station-6/problem
+#Input
+
+SELECT DISTINCT city 
+from station
+where lower(city) LIKE '[a, e, i, o, u]%'
+ORDER BY city;
+
