@@ -1,0 +1,6 @@
+# Workflow of web scraping  https://www.udemy.com/course/web-scraping-and-api-fundamentals-in-python/learn/lecture/18585753#overview
+1. Inspect the page
+2. Obtain HTML
+3. Choose a parser
+4. Create a Beautiful Soup object
+5. Export the HTML to a file(optional)
