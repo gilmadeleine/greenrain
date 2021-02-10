@@ -1,0 +1,13 @@
+# Visualize data using Histogram "the lowest temperature in Seoul in January"
+
+import csv
+import matplotlib.pyplot as plt
+f = open('seoul.csv')
+data = csv.reader(f)
+header = next(data)
+low =[]
+for row in data:
+    row[3] = float(row[3])
+    low.append(row[3])
+plt.hist(low, bins=100, color ='b')
+plt.show()
