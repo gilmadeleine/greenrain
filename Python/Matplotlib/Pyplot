@@ -1,0 +1,16 @@
+# 1)Download the public temperature data 2)Find the warmest tempeature using Append, List 3)Import matplotlib and Visualize the data
+
+import csv
+
+f = open('seoul.csv')
+data = csv.reader(f)
+header = next(data)
+result = []
+
+for row in data:
+    if row[-1] != '':
+        result.append(float(row[-1]))
+import matplotlib.pyplot as plt
+plt.plot(result, 'r')
+plt.title("January the highest temeperature in Seoul, Korea")
+plt.show()
