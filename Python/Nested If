@@ -1,0 +1,11 @@
+# You can have if statements inside if statements, this is called nested if statements.
+# Be mindful of the indentation- this changes the result!
+
+x = 9
+
+if x > 10.5:
+  print("Greater than ten,")
+  if x > 20:
+    print("and also greater than 20!")
+else:
+    print("this is less than 10.")
