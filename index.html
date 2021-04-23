@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+   <div class="button" onclick="button_click()"> Focus </div>
+   <div class="button" onclick="button_click()"> Pause </div>
+   <div class="button" onclick="button_click()">Reset</div>
+</div>
+</body>
+<script>
+function button_click(){
+  event.target.classList.toggle("active");
+}
+</script>
+</html>
