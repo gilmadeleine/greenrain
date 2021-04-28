@@ -1,0 +1,36 @@
+//Tags
+<Hn> title </hn>
+<p> </p>
+<br> doesn't have closing tag
+<hr> horizontal tag
+<blockquote> </blockquote> : Quoatinng and Indenting
+
+
+//Example
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <meta chartset="UTF-8">
+  <meta name ="viewport" content=width=device-width, initial-scale=1.0>
+  <title> Practice1 </title>
+  <style>
+
+    </style>
+  </head>
+  <body>
+    <header>
+    <h1> Lemonade War </h1>
+    <h2> Making Lemondae</h2>
+    <p>I love lemondade </p>  <p>I love chocolate cheap cookies too </p>
+    <hr>
+    <blockquote> Employment Attorney in the state of California
+
+    </blockquote>
+    <pre>Lorem Ipsum is simply dummy
+
+
+
+    text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+</pre>
+      </body>
+      </html>
