@@ -1,0 +1,27 @@
+# you can change the style <s>
+<q> vs <blockquote>
+
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <meta chartset="UTF-8">
+  <meta name ="viewport" content=width=device-width, initial-scale=1.0>
+  <title> Practice1 </title>
+  <style>
+
+    </style>
+  </head>
+  <body>
+    <header>
+    <h1> Inline Label Tag </h1>
+    <h2> "q" tag doesn't change the line unlike "blockquote" </h2>
+    <p>I love lemondade </p>  <p>I love chocolate cheap cookies too </p>
+    <hr>
+    <q> <em>Employment Attorney</em> in the state of California
+
+    </q>
+    <b>Lorem Ipsum</b> is simply dummy text
+      <span style="color : teal;">text of the printing </span> and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+
+      </body>
+      </html>
