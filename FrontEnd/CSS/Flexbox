@@ -1,0 +1,48 @@
+/* Flexbox: 4 layout models*/
+https://www.w3schools.com/css/css3_flexbox.asp
+-Block, for sections in a webpage
+-Inline, for text
+-Table, for two-dimensional table data
+- Positioned, for explicit position of an element
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+To start using the Flexbox model, you need to first define a flex container.*/
+
+<html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #e67e22;
+}
+
+.flex-container > div {
+  background-color: #27ae60;
+  width: 1100%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size:2em;
+}
+</style>
+</head>
+<body>
+<h1>Flexible Boxes</h1>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+</div>
+
+<p>Try to resize the browser window.</p>
+<p>A container with "flex-wrap: nowrap;" will never wrap its items.</p>
+<p><strong>Note:</strong> Flexbox is not supported in Internet Explorer 10 or earlier versions.</p>
+
+</body>
+</html>
