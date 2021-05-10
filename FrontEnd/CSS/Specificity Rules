@@ -1,0 +1,25 @@
+https://www.w3schools.com/css/css_specificity.asp
+1. Equal specificity: the latest rule counts - If the same rule is written twice into the external style sheet, 
+then the lower rule in the style sheet is closer to the element to be styled, and therefore will be applied:
+Example
+
+h1 {background-color: yellow;}
+h1 {background-color: red;}
+
+2. A class selector beats any number of element selectors - a class selector such as .intro beats h1, p, div, etc:
+<html>
+<head>
+<style>
+.intro {background-color: yellow;}
+h1 {background-color: red;}
+</style>
+</head>
+<body>
+
+<h1 class="intro">This is a heading</h1>
+
+</body>
+</html>
+
+The universal selector and inherited values have a specificity of 0 - *, body * and similar have a zero specificity. 
+Inherited values also have a specificity of 0.
