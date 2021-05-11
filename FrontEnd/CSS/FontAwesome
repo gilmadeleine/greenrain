@@ -1,0 +1,33 @@
+https://fontawesome.com/icons/play?style=solid
+Signup and get the script and insert between title in the HTML
+Insert the the copy i class script into the body in HTML
+Change the style in the CSS
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Blog</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1"
+  name="viewport"/>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/2f2928c98a.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+       <li><a class="active" href="index.html">About</a></li>
+       <li><a href="index2.html">Food</a></li>
+       <li><a href="index3.html">Pet</a></li>
+     </ul>
+   </nav>
+  </header>
+
+  <div id="container">
+   <div class="website" align= left>
+     <iframe src="https://orangenote.org" height="350" width="300" title="Iframe Example"></iframe>
+   </div>
+   <p>hello</p>
