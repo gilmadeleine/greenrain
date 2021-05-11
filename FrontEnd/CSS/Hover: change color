@@ -1,0 +1,10 @@
+For instance when you have to change the icon color from fontawesome, use the script below in the CSS
+
+.fas {
+  color:red;
+  font-size: 80px;
+}
+.fas:hover {
+  color:blue;
+  font-size: 80px;
+}
