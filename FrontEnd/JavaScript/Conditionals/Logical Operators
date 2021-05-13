@@ -1,0 +1,9 @@
+
+/* The && symbol is the logical AND operator, and it is used to combine two logical expressions into one larger logical expression. If both smaller expressions are true, then the entire expression evaluates to true. 
+If either one of the smaller expressions is false, then the whole logical expression is false */
+
+Operator	Meaning	Example	How it works
+
+&&	Logical AND	value1 && value2	Returns true if both value1 and value2 evaluate to true.
+||	Logical OR	value1 || value2	Returns true if either value1 or value2 (or even both!) evaluates to true.
+!	Logical NOT	!value1	Returns the opposite of value1. If value1 is true, then !value1 is false.
